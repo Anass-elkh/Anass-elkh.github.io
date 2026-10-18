@@ -175,55 +175,185 @@ export const PROJECTS: Project[] = [
   }
 ];
 
+export interface ExperienceItem {
+  id: string;
+  period: string;
+  role: string;
+  company: string;
+  companyType: string;
+  badge: string;
+  location: string;
+  description: string;
+  highlights: string[];
+  technologies: string[];
+}
+
+export interface EducationItem {
+  id: string;
+  period: string;
+  degree: string;
+  institution: string;
+  location: string;
+  badge: string;
+  description: string;
+  modules: string[];
+  skills: string[];
+}
+
+export const EXPERIENCES: ExperienceItem[] = [
+  {
+    id: "lear-pfe",
+    period: "Février 2026 – Juin 2026",
+    role: "Ingénieur PFE — Systèmes Industriels & Informatique",
+    company: "Lear Corporation",
+    companyType: "Multinationale Automobile Tier-1 (Cutting Dept)",
+    badge: "Stage de Fin d'Études (PFE)",
+    location: "Fès, Maroc",
+    description: "Analyse, conception et déploiement en usine d'une solution intelligente de gestion et de traçabilité des terminaux industriels pour le département Cutting en environnement certifié IATF 16949.",
+    highlights: [
+      "Centralisation du stock des terminaux industriels avec traçabilité unitaire par scan de code-barres.",
+      "Algorithme de guidage visuel pour la localisation matricielle des terminaux dans les baies et racks.",
+      "Gestion Kanban dynamique des flux de réapprovisionnement et suivi des réceptions en attente (Waiting Reception).",
+      "Tableaux de bord de pilotage en temps réel sous Power BI et application des méthodes Lean Manufacturing (PDCA, Kaizen, 5S)."
+    ],
+    technologies: ["Microsoft Access", "VBA", "SQL", "Power BI", "Excel Avancé", "Barcode Zebra", "Lean Manufacturing (PDCA, 5S)"]
+  },
+  {
+    id: "infodix-stock",
+    period: "Juillet 2025 – Septembre 2025",
+    role: "Développeur Full Stack",
+    company: "INFODIX SARL",
+    companyType: "Société de Services Numériques & Conseil IT",
+    badge: "Stage Technique Ingénieur",
+    location: "Fès, Maroc",
+    description: "Conception et développement complet d'une application web réactive de gestion de stock et traçabilité d'équipements informatiques et réseaux en temps réel.",
+    highlights: [
+      "Architecture modulaire découplée avec frontend SPA React 18 / Tailwind CSS et backend API REST sous Node.js & Express.",
+      "Modélisation ACID relationnelle sous PostgreSQL avec intégrité référentielle et déclencheurs d'audit.",
+      "Intégration d'une couche de cache en mémoire Redis pour accélérer les requêtes d'inventaire fréquentes.",
+      "Conteneurisation intégrale de la stack avec Docker & Docker Compose pour un déploiement reproductible."
+    ],
+    technologies: ["React 18", "TypeScript", "Node.js", "Express", "PostgreSQL", "Redis", "Docker", "Tailwind CSS"]
+  },
+  {
+    id: "alomrane-helpdesk",
+    period: "Juillet 2024 – Septembre 2024",
+    role: "Développeur Web Full Stack",
+    company: "Groupe Al Omrane",
+    companyType: "Établissement Public d'Aménagement & Immobilier",
+    badge: "Stage de Perfectionnement",
+    location: "Fès, Maroc",
+    description: "Développement et mise en production d'une solution numérique Helpdesk de gestion des tickets d'assistance et d'optimisation du support technique d'entreprise.",
+    highlights: [
+      "Modélisation relationnelle de la base de données sous MySQL avec gestion des rôles (utilisateurs, techniciens, admin).",
+      "Développement de la logique métier selon l'architecture MVC en PHP modulaire.",
+      "Interface utilisateur responsive et ergonomique développée avec Bootstrap 5 et JavaScript vanilla.",
+      "Amélioration de la traçabilité des tickets et réduction significative des délais de traitement du support interne."
+    ],
+    technologies: ["PHP", "MySQL", "JavaScript", "Bootstrap 5", "HTML5 / CSS3", "Architecture MVC"]
+  }
+];
+
+export const EDUCATION: EducationItem[] = [
+  {
+    id: "ensa-fes",
+    period: "2021 – 2026",
+    degree: "Diplôme d'Ingénieur d'État en Génie Informatique",
+    institution: "École Nationale des Sciences Appliquées de Fès (ENSA Fès)",
+    location: "Fès, Maroc",
+    badge: "Formation d'Excellence (5 ans)",
+    description: "Formation d'élite en 5 ans habilitée par l'État marocain, alliant maîtrise des fondements algorithmiques, ingénierie logicielle avancée, architectures distribuées, bases de données et Business Intelligence.",
+    modules: [
+      "Architectures Distribuées & Web Services (SOA, RESTful JAX-RS, SOAP JAX-WS, Microservices)",
+      "Génie Logiciel & Conception Objet (UML, Design Patterns, Méthodes Agiles Scrum, DevOps)",
+      "Bases de Données & Data (PostgreSQL, Oracle PL/SQL, SQL Server, Modélisation Décisionnelle)",
+      "Développement Applicatif Moderne (Java/JEE, Spring Boot, React, C#, ASP.NET, Python)",
+      "Réseaux, Systèmes & Cybersécurité (Protocoles TCP/IP, Linux, Sécurité Applicative, Docker)"
+    ],
+    skills: ["Java/JEE", "Spring Boot", "React", "C# / ASP.NET", "PostgreSQL", "Oracle", "Docker", "Agile"]
+  },
+  {
+    id: "fst-fes",
+    period: "Septembre 2020 – Juin 2021",
+    degree: "Tronc Commun Scientifique / Préparatoire",
+    institution: "Faculté des Sciences et Techniques (FST Fès)",
+    location: "Fès, Maroc",
+    badge: "Préparatoire Universitaire",
+    description: "Cursus préparatoire approfondi axé sur les mathématiques pures et appliquées, l'algèbre linéaire, l'analyse numérique et l'algorithmique impérative.",
+    modules: [
+      "Algorithmique et Programmation structurée en langage C",
+      "Algèbre linéaire, espaces vectoriels et calcul matriciel",
+      "Analyse mathématique, séries numériques et équations différentielles",
+      "Physique générale, électrostatique et mécanique du point"
+    ],
+    skills: ["Algorithmique", "Langage C", "Mathématiques", "Analyse Numérique"]
+  },
+  {
+    id: "baccalaureat",
+    period: "Juin 2020",
+    degree: "Baccalauréat Scientifique — Série Sciences Physiques",
+    institution: "Académie Régionale de l'Éducation et de la Formation (AREF Fès-Meknès)",
+    location: "Fès, Maroc",
+    badge: "Mention Très Bien",
+    description: "Obtention du baccalauréat scientifique avec Mention Très Bien, sanctionnant un cursus secondaire d'excellence en sciences exactes et raisonnement logique.",
+    modules: [
+      "Mathématiques approfondies (Analyse, Nombres complexes, Géométrie)",
+      "Physique fondamentale (Ondes, Mécanique, Électricité) & Chimie",
+      "Méthodologie d'investigation et rigueur scientifique"
+    ],
+    skills: ["Mathématiques", "Sciences Physiques", "Logique Scientifique"]
+  }
+];
+
 export const TIMELINE: TimelineItem[] = [
   {
     year: "2026",
-    title: "Projet de Fin d'Études (PFE) — Ingénieur d'État",
-    organization: "Lear Corporation (Département Cutting)",
-    role: "Ingénieur Stagiaire en Systèmes Industriels & Informatique",
-    location: "Fès / Région Industrielle",
-    description: "Conception et déploiement du Système Intelligent de Gestion des Terminaux : traçabilité par scan code-barres, localisation matricielle des racks, gestion Kanban et intégration de tableaux de bord Power BI en environnement de production automobile certifié IATF 16949.",
-    technologies: ["Microsoft Access", "VBA", "SQL", "Power BI", "Lean Manufacturing (PDCA, 5S, Kaizen)"],
+    title: "Projet de Fin d'Études (PFE) — Lear Corporation",
+    organization: "Lear Corporation (Cutting Dept)",
+    role: "Ingénieur PFE — Systèmes Industriels & Informatique",
+    location: "Fès, Maroc",
+    description: "Conception et déploiement du Système Intelligent de Gestion des Terminaux Industriels avec traçabilité code-barres et pilotage Power BI.",
+    technologies: ["Microsoft Access", "VBA", "SQL", "Power BI", "Lean Manufacturing"],
     type: "experience"
   },
   {
     year: "2021 – 2026",
     title: "Diplôme d'Ingénieur d'État en Génie Informatique",
-    organization: "École Nationale des Sciences Appliquées de Fès (ENSA Fès)",
+    organization: "ENSA Fès",
     role: "Élève Ingénieur d'État",
     location: "Fès, Maroc",
-    description: "Formation d'excellence en 5 ans : algorithmique avancée, architecture des ordinateurs, génie logiciel, bases de données relationnelles et NoSQL, réseaux, sécurité informatique et gestion de projet Agile.",
-    technologies: ["Java/JEE", "C/C++", "Python", "SQL & PL/SQL", "Web Full Stack", "DevOps"],
+    description: "Formation d'excellence en 5 ans en génie logiciel, architectures distribuées, bases de données et Business Intelligence.",
+    technologies: ["Java/JEE", "Spring Boot", "React", "PostgreSQL", "Power BI"],
     type: "education"
   },
   {
     year: "2025",
-    title: "Stage Ingénieur Full Stack — Gestion de Stock Temps Réel",
+    title: "Stage Full Stack — INFODIX SARL",
     organization: "INFODIX SARL",
     role: "Développeur Full Stack",
     location: "Fès, Maroc",
-    description: "Développement d'une application d'inventaire en temps réel pour le matériel réseau et infrastructure. Architecture micro-services avec React, Node.js, mise en cache Redis et stockage PostgreSQL sous Docker.",
+    description: "Développement d'une application d'inventaire temps réel avec React, Node.js, PostgreSQL, Redis et Docker.",
     technologies: ["React", "Node.js", "Express", "PostgreSQL", "Redis", "Docker"],
     type: "experience"
   },
   {
     year: "2024",
-    title: "Stage Développement Web — Système Helpdesk",
-    organization: "Al Omrane",
+    title: "Stage Développement Web — Al Omrane",
+    organization: "Groupe Al Omrane",
     role: "Développeur Web",
     location: "Fès, Maroc",
-    description: "Mise en place d'une solution de ticketing interne pour le support technique. Modélisation de la base de données MySQL, développement en PHP modulaire et interface Bootstrap responsive.",
-    technologies: ["PHP", "MySQL", "Bootstrap", "JavaScript", "HTML/CSS"],
+    description: "Système Helpdesk de gestion des tickets d'assistance technique avec PHP modulaire, MySQL et Bootstrap.",
+    technologies: ["PHP", "MySQL", "Bootstrap", "JavaScript"],
     type: "experience"
   },
   {
     year: "2020",
     title: "Baccalauréat Sciences Physiques — Mention Très Bien",
-    organization: "Académie Régionale de l'Éducation et de la Formation",
-    role: "Lycéen",
+    organization: "AREF Fès-Meknès",
+    role: "Bachelier",
     location: "Fès, Maroc",
-    description: "Bases solides en mathématiques pures, mécanique et physique appliquée.",
-    technologies: ["Mathématiques", "Physique-Chimie"],
+    description: "Bases solides en mathématiques, physique et méthodologie scientifique.",
+    technologies: ["Mathématiques", "Physique"],
     type: "education"
   }
 ];
